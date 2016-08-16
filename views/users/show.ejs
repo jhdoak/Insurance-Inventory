@@ -1,0 +1,12 @@
+<% include partials/head %>
+<% include partials/header %>
+  <main>
+    <div>
+      <h3><%= user.username %></h3>
+      <p><b>Name: </b><%= user.name %></p>
+      <p><b>Email: </b><%= user.email %></p>
+    </div>
+
+    <a href="/users/<%= user.username %>/edit" class="btn btn-danger">Edit Information</a>
+  </main>
+<% include partials/footer %>

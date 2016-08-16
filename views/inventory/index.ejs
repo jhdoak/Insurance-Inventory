@@ -1,0 +1,23 @@
+<% include partials/head %>
+<% include partials/header %>
+  <main>
+    <div>
+      <h3>Your Inventory</h3>
+      <% items.forEach(function(item) { %>
+        <h4>
+          <form method="POST" action="/inventory/<%= item._id %>?_method=DELETE">
+            <a href="/inventory/<%= item._id %>">
+              <%= item.brand + ' ' + item.model%>
+            </a>
+            <span> - </span>
+            <a href="/inventory/<%= item.category %>">
+              <%= item.category %>
+            </a>
+            <button type="submit" class="btn btn-xs btn-danger">Delete</button>
+          </form>
+        </h4>
+      <% }) %>
+    </div>
+    <a href="/todos/new" class="btn btn-primary">New</a>
+  </main>
+<% include partials/footer %>
