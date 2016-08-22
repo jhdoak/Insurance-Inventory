@@ -1,14 +1,17 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
+var express        = require('express');
+var path           = require('path');
+var favicon        = require('serve-favicon');
+var logger         = require('morgan');
+var cookieParser   = require('cookie-parser');
+var bodyParser     = require('body-parser');
+var mongoose       = require('mongoose');
 var methodOverride = require('method-override');
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
+mongoose.Promise = require('bluebird');
+
+var routes    = require('./routes/index');
+var users     = require('./routes/users');
+var inventory = require('./routes/inventory');
 
 var app = express();
 

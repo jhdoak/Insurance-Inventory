@@ -1,8 +1,83 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/* GENERAL FORMATTING/BACKGROUND */
+
+* {
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 300;
 }
 
-a {
-  color: #00B7FF;
+html {
+  background: url(../images/bg4.jpeg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+/* NAV STYLING */
+
+nav, footer {
+  background: rgba(255, 255, 255, .2);
+  display: flex;
+  justify-content: space-between;
+}
+
+nav div {
+  padding: 10px 10px;
+  display: flex;
+}
+
+nav div a {
+  padding: 0 2px;
+  text-decoration: none;
+  color: white;
+  margin: auto;
+}
+
+nav h1 {
+  margin: 0;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.nav-right a {
+  padding-left: 15px;
+}
+
+/* LANDING DIV STYLING */
+
+.main-landing {
+  width: 50%;
+  height: 100px;
+  position: absolute;
+  margin: auto;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: rgba(255, 255, 255, .2);
+}
+
+.main-landing h1 {
+  color: white;
+  font-weight: 400;
+  margin: 0;
+}
+
+
+/* FOOTER STYLING */
+
+footer {
+   position:fixed;
+   left:0px;
+   bottom:0px;
+   height:30px;
+   width:100%;
+}
+
+footer a {
+  margin: auto;
+  color: white;
+  text-decoration: none;
 }
