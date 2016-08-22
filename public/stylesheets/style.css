@@ -7,7 +7,7 @@
 }
 
 html {
-  background: url(../images/bg4.jpeg) no-repeat center center fixed;
+  background: url(../images/bg2.jpeg) no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -16,10 +16,14 @@ html, body {
   margin: 0;
 }
 
+.emphasis {
+  font-weight: 700;
+}
+
 /* NAV STYLING */
 
-nav, footer {
-  background: rgba(255, 255, 255, .2);
+nav {
+  background: rgba(0, 0, 0, .5);
   display: flex;
   justify-content: space-between;
 }
@@ -38,6 +42,7 @@ nav div a {
 
 nav h1 {
   margin: 0;
+  font-weight: 400;
 }
 
 a:hover {
@@ -48,36 +53,134 @@ a:hover {
   padding-left: 15px;
 }
 
+
+
 /* LANDING DIV STYLING */
 
 .main-landing {
   width: 50%;
-  height: 100px;
-  position: absolute;
-  margin: auto;
-  top: 0; left: 0; bottom: 0; right: 0;
-  background: rgba(255, 255, 255, .2);
+  margin: 55px auto 0;
+  background: rgba(0, 0, 0, .6);
+  border-radius: 5px;
 }
 
 .main-landing h1 {
-  color: white;
+  color: lightgray;
   font-weight: 400;
-  margin: 0;
+  margin: 0 5px 5px;
 }
+
+.main-landing h2 {
+  color: lightgray;
+  font-size: 1.25em;
+}
+
+.main-landing h2 {
+  margin: 0 5px;
+}
+
+#action {
+  margin: 10px 5px;
+  font-weight: 400;
+}
+
+.main-landing form {
+  display: inline;
+}
+
+.main-landing button {
+  margin: 0 0 5px 5px;
+}
+
+
+
+/* SIGNUP/LOGIN DIV STYLING */
+
+.signup-landing, .login-landing {
+  width: 50%;
+  margin: 55px auto 0;
+  background: rgba(0, 0, 0, .6);
+  border-radius: 5px;
+}
+
+.signup-landing h1, .login-landing h1 {
+  color: lightgray;
+  font-weight: 400;
+  margin: 5px;
+}
+
+.signup-landing form, .login-landing form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.signup-landing .form-group, .login-landing .form-group {
+  width: 33%;
+  height: 60px;
+  padding: 0 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.signup-landing label, .login-landing label {
+  color: lightgray;
+  font-weight: 400;
+}
+
+.signup-landing input, .login-landing input {
+  height: 22px;
+}
+
+.signup-landing button, .login-landing button {
+  margin: 5px;
+}
+
+
+
+/* LOGIN STYLING */
+
+.login-landing .form-group {
+  width: 50%;
+  height: 41px;
+}
+
 
 
 /* FOOTER STYLING */
 
 footer {
-   position:fixed;
-   left:0px;
-   bottom:0px;
-   height:30px;
-   width:100%;
+  position:fixed;
+  left:0px; bottom:0px;
+  display: flex;
+  flex-direction: column;
+  height:50px;
+  width:100%;
+  background: rgba(0, 0, 0, .7);
 }
 
-footer a {
-  margin: auto;
+footer h4 {
+  width: 100%;
   color: white;
+  margin: 2px 0;
+  text-align: center;
+}
+
+#footer-nav {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+  margin: 5px auto;
+}
+
+#footer-nav a {
+  margin: auto;
+  color: lightgray;
+  text-decoration: none;
+}
+
+#footer-nav a:hover {
+  color: white;
+  font-weight: 400;
   text-decoration: none;
 }

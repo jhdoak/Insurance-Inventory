@@ -34,7 +34,8 @@ Item.remove({})
   var michael = new User({ name: 'Michael', email: 'michael@mike.com', password: 'abc123' });
   return User.create([justin, alicia, michael]);
 })
-.then(function(allUsers) {
+.then(function() {
+  var allUsers = User.find({});
   console.log('allUsers:', allUsers);
   console.log('%s, %s, and %s created!', allUsers[0].name, allUsers[1].name, allUsers[2].name);
   console.log('Giving users new homes...');

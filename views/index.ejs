@@ -2,9 +2,17 @@
 <% include partials/header %>
 
   <main>
-    <div>
-      <h1><%= title %></h1>
-      <p>Welcome to <%= title %></p>
+    <div class='main-landing'>
+      <h1>Insurance Inventory</h1>
+      <h2>Damage happens when we least expect it.</h2>
+      <h2>Prepare yourself to make the claim you deserve.</h2>
+      <h2 id='action'>Start an inventory <span class='emphasis'>today</span>.</h2>
+      <form action="/login" method="GET">
+        <button type="submit">Login</button>
+      </form>
+      <form action="/signup" method="GET">
+        <button type="submit">Sign Up</button>
+      </form>
     </div>
   </main>
 
