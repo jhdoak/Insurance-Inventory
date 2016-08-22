@@ -90,6 +90,7 @@ a:hover {
 
 .main-landing button {
   margin: 0 0 5px 5px;
+  font-size: .8em;
 }
 
 
@@ -133,7 +134,8 @@ a:hover {
 }
 
 .signup-landing button, .login-landing button {
-  margin: 5px;
+  margin: 8px 5px;
+  font-size: .8em;
 }
 
 
@@ -142,7 +144,6 @@ a:hover {
 
 .login-landing .form-group {
   width: 50%;
-  height: 41px;
 }
 
 

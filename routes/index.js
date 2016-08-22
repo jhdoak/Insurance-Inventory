@@ -1,14 +1,15 @@
 var express = require('express');
 var router = express.Router();
+var passport = require('passport');
 
 // GET home page
 router.get('/', function(req, res, next) {
-  res.render('index.ejs'/*, { title: 'Express', message: req.flash() }*/);
+  res.render('index.ejs', { title: 'Express', message: req.flash() });
 });
 
 // GET /signup
 router.get('/signup', function(req, res, next) {
-  res.render('signup.ejs'/*, { message: req.flash() }*/);
+  res.render('signup.ejs', { message: req.flash() });
 });
 
 // POST /signup
@@ -23,7 +24,7 @@ router.post('/signup', function(req, res, next) {
 
 // GET /login
 router.get('/login', function(req, res, next) {
-  res.render('login.ejs'/*, { message: req.flash() }*/);
+  res.render('login.ejs', { message: req.flash() });
 });
 
 // POST /login

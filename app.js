@@ -6,15 +6,20 @@ var cookieParser   = require('cookie-parser');
 var bodyParser     = require('body-parser');
 var mongoose       = require('mongoose');
 var methodOverride = require('method-override');
+var passport       = require('passport');
+var session        = require('express-session');
+var flash          = require('connect-flash');
 
 mongoose.Promise = require('bluebird');
 
-var routes    = require('./routes/index');
-var users     = require('./routes/users');
-var inventory = require('./routes/inventory');
+// Routes
+var homeRouter      = require('./routes/index');
+var usersRouter     = require('./routes/users');
+var inventoryRouter = require('./routes/inventory');
 
 var app = express();
 
+// Connect to database
 mongoose.connect('mongodb://localhost/insurance-inventory');
 
 // view engine setup
@@ -27,13 +32,28 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
 app.use(methodOverride('_method'));
 
-app.use('/', routes);
-app.use('/users', users);
-app.use('/inventory', inventory);
+app.use(session({ secret: 'insurance',
+                  resave: true,
+                  saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
+
+require('./config/passport/passport')(passport);
+
+// This middleware will allow us to use the currentUser in our views and routes.
+app.use(function (req, res, next) {
+  global.currentUser = req.user;
+  next();
+});
+
+// Routes
+app.use(express.static(path.join(__dirname, 'public')));
+app.use('/', homeRouter);
+app.use('/users', usersRouter);
+app.use('/inventory', inventoryRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -66,5 +86,6 @@ app.use(function(err, req, res, next) {
   });
 });
 
+console.log('Running in %s mode', app.get('env'));
 
 module.exports = app;
