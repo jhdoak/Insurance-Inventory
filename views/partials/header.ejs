@@ -3,10 +3,19 @@
     <nav class='container'>
       <div class='nav-left'>
         <a href="/"><h1>Insurance Inventory</h1></a>
+      <% if (currentUser) { %>
+        <a class='homes-anchor' href="/">My Homes</a>
+      <% } %>
       </div>
+
       <div class='nav-right'>
-        <a href="/signup">Signup</a>
-        <a href="/login">Login</a>
+        <% if (currentUser) { %>
+          <a href="#"><%= currentUser.local.email %></a>
+          <a href="/logout">Logout</a>
+        <% } else { %>
+          <a href="/signup">Signup</a>
+          <a href="/login">Login</a>
+        <% } %>
       </div>
     </nav>
   </header>

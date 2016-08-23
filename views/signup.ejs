@@ -4,6 +4,7 @@
       <div class="signup-landing">
         <h1>Signup</h1>
         <form method="post" action="/signup">
+
           <div class="form-group">
             <label for="email">Email:</label>
             <input placeholder="email" type="text" name="email" id="email">
@@ -14,12 +15,26 @@
             <input placeholder="password" type="password" name="password" id="password">
           </div>
 
-          <div class="form-group">
+          <!-- <div class="form-group">
             <label for="retype">Confirm Password:</label>
             <input placeholder="password" type="password" name="retype" id="retype">
-          </div>
+          </div> -->
 
           <button type="submit">Submit</button>
+
+          <div class='flash'>
+            <% if (typeof message !== 'undefined') { %>
+              <% if (typeof message.error !== 'undefined' && message.error.length > 0) { %>
+                <div style='color: orange; font-size: 1em; width: 100%; font-weight: 400; margin: 9px 0'><%= message.error %></div>
+              <% } %>
+              <% if (typeof message.info !== 'undefined' && message.info.length > 0) { %>
+                <div class="bg-info"><%= message.info %></div>
+              <% } %>
+              <% if (typeof message.success !== 'undefined' && message.success.length > 0) { %>
+                <div class="bg-success"><%= message.success %></div>
+              <% } %>
+            <% } %>
+          </div>
         </form>
       </div>
     </main>

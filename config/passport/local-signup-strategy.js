@@ -16,7 +16,7 @@ var strategy = new LocalStrategy({
       }
       else {
         // Create a new user
-        var newUser      = new User();
+        var newUser = new User();
         newUser.local.email    = email;
         newUser.local.password = newUser.encrypt(password);
 

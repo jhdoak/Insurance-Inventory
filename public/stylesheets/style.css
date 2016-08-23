@@ -53,6 +53,13 @@ a:hover {
   padding-left: 15px;
 }
 
+.homes-anchor {
+  padding-left: 7px;
+  margin-left: 3px;
+  margin-top: 7px;
+  border-left: solid white 1px;
+}
+
 
 
 /* LANDING DIV STYLING */
@@ -60,7 +67,7 @@ a:hover {
 .main-landing {
   width: 50%;
   margin: 55px auto 0;
-  background: rgba(0, 0, 0, .6);
+  background: rgba(0, 0, 0, .7);
   border-radius: 5px;
 }
 
@@ -97,43 +104,43 @@ a:hover {
 
 /* SIGNUP/LOGIN DIV STYLING */
 
-.signup-landing, .login-landing {
+.signup-landing, .login-landing, .new-home {
   width: 50%;
   margin: 55px auto 0;
-  background: rgba(0, 0, 0, .6);
+  background: rgba(0, 0, 0, .7);
   border-radius: 5px;
 }
 
-.signup-landing h1, .login-landing h1 {
+.signup-landing h1, .login-landing h1, .new-home h1 {
   color: lightgray;
   font-weight: 400;
   margin: 5px;
 }
 
-.signup-landing form, .login-landing form {
+.signup-landing form, .login-landing form, .new-home form {
   display: flex;
   flex-wrap: wrap;
 }
 
-.signup-landing .form-group, .login-landing .form-group {
-  width: 33%;
-  height: 60px;
+.signup-landing .form-group, .login-landing .form-group, .new-home .form-group {
+  width: 50%;      /* Change width to 33% if implementing */
+  height: 60px;    /* password verification on signup page */
   padding: 0 5px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
 
-.signup-landing label, .login-landing label {
+.signup-landing label, .login-landing label, .new-home label {
   color: lightgray;
   font-weight: 400;
 }
 
-.signup-landing input, .login-landing input {
+.signup-landing input, .login-landing input, .new-home input {
   height: 22px;
 }
 
-.signup-landing button, .login-landing button {
+.signup-landing button, .login-landing button, .new-home button {
   margin: 8px 5px;
   font-size: .8em;
 }
@@ -145,6 +152,39 @@ a:hover {
 .login-landing .form-group {
   width: 50%;
 }
+
+
+
+/* HOMES LIST */
+
+.homes-list span {
+  text-decoration: underline;
+}
+
+.home h2 {
+  padding-bottom: 5px;
+  color: white;
+  font-size: 1.5em;
+}
+
+.main-landing h3 {
+  color: white;
+  margin: 0 10px 0 5px;
+  font-size: 1.17em;
+}
+
+.home {
+  padding: 5px 0;
+  border-bottom: 1px solid white;
+}
+
+.homes-list button {
+  margin: 5px 0 5px 5px;
+}
+
+
+
+/* NEW HOME */
 
 
 

@@ -2,18 +2,38 @@
 <% include partials/header %>
 
   <main>
-    <div class='main-landing'>
-      <h1>Insurance Inventory</h1>
-      <h2>Damage happens when we least expect it.</h2>
-      <h2>Prepare yourself to make the claim you deserve.</h2>
-      <h2 id='action'>Start an inventory <span class='emphasis'>today</span>.</h2>
-      <form action="/login" method="GET">
-        <button type="submit">Login</button>
-      </form>
-      <form action="/signup" method="GET">
-        <button type="submit">Sign Up</button>
-      </form>
-    </div>
+      <% if (!currentUser) { %>
+        <div class='main-landing'>
+          <h1>Insurance Inventory</h1>
+          <h2>Damage happens when we least expect it.</h2>
+          <h2>Prepare yourself to make the claim you deserve.</h2>
+          <h2 id='action'>Start an inventory <span class='emphasis'>today</span>.</h2>
+          <form action="/login" method="GET">
+            <button type="submit">Login</button>
+          </form>
+          <form action="/signup" method="GET">
+            <button type="submit">Sign Up</button>
+          </form>
+        </div>
+      <% } else if (currentUser) { %>
+        <div class='main-landing'>
+          <div class='homes-list'>
+
+            <% currentUser.homes.forEach(function(home) { %>
+              <div class='home'>
+                <h2><%= home.name %></h2>
+                <h3><span>Address:</span> <%= home.address %></h3>
+                <h3><span>Residents:</span> <%= home.residents %></h3>
+                <h3><span>Description:</span> <%= home.description %></h3>
+              </div>
+            <% }); %>
+
+            <form action="/users/<%= currentUser._id %>/home/new" method="GET">
+              <button type="submit">Create New Home</button>
+            </form>
+          </div>
+        </div>
+      <% } %>
   </main>
 
 <% include partials/footer %>

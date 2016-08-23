@@ -1,23 +1,49 @@
 <% include partials/head %>
 <% include partials/header %>
-  <main>
-    <div>
-      <h3>Your Inventory</h3>
-      <% items.forEach(function(item) { %>
-        <h4>
-          <form method="POST" action="/inventory/<%= item._id %>?_method=DELETE">
-            <a href="/inventory/<%= item._id %>">
-              <%= item.brand + ' ' + item.model%>
-            </a>
-            <span> - </span>
-            <a href="/inventory/<%= item.category %>">
-              <%= item.category %>
-            </a>
-            <button type="submit" class="btn btn-xs btn-danger">Delete</button>
-          </form>
-        </h4>
-      <% }) %>
+  <% } else { %>
+    <div class='inventory'>
+      <div class='item'>
+        <h2>Item Name</h2>
+        <h3><span class='emphasis'>Brand: </span>LG</h3>
+        <h3><span class='emphasis'>Model: </span>55-TLS</h3>
+        <h3><span class='emphasis'>Serial #: </span>3452389823497</h3>
+        <h3><span class='emphasis'>Purchase Date: </span>3/5/15</h3>
+        <h3><span class='emphasis'>Estimated Value: </span>$500</h3>
+      </div>
+      <div class='item'>
+        <h2>Item Name</h2>
+        <h3><span class='emphasis'>Brand: </span>LG</h3>
+        <h3><span class='emphasis'>Model: </span>55-TLS</h3>
+        <h3><span class='emphasis'>Serial #: </span>3452389823497</h3>
+        <h3><span class='emphasis'>Purchase Date: </span>3/5/15</h3>
+        <h3><span class='emphasis'>Estimated Value: </span>$500</h3>
+      </div>
+      <div class='item'>
+        <h2>Item Name</h2>
+        <h3><span class='emphasis'>Brand: </span>LG</h3>
+        <h3><span class='emphasis'>Model: </span>55-TLS</h3>
+        <h3><span class='emphasis'>Serial #: </span>3452389823497</h3>
+        <h3><span class='emphasis'>Purchase Date: </span>3/5/15</h3>
+        <h3><span class='emphasis'>Estimated Value: </span>$500</h3>
+      </div>
+      <div class='item'>
+        <h2>Item Name</h2>
+        <h3><span class='emphasis'>Brand: </span>LG</h3>
+        <h3><span class='emphasis'>Model: </span>55-TLS</h3>
+        <h3><span class='emphasis'>Serial #: </span>3452389823497</h3>
+        <h3><span class='emphasis'>Purchase Date: </span>3/5/15</h3>
+        <h3><span class='emphasis'>Estimated Value: </span>$500</h3>
+      </div>
+      <div class='item'>
+        <h2>Item Name</h2>
+        <h3><span class='emphasis'>Brand: </span>LG</h3>
+        <h3><span class='emphasis'>Model: </span>55-TLS</h3>
+        <h3><span class='emphasis'>Serial #: </span>3452389823497</h3>
+        <h3><span class='emphasis'>Purchase Date: </span>3/5/15</h3>
+        <h3><span class='emphasis'>Estimated Value: </span>$500</h3>
+      </div>
     </div>
-    <a href="/todos/new" class="btn btn-primary">New</a>
-  </main>
+  <% } %>
 <% include partials/footer %>
+
+

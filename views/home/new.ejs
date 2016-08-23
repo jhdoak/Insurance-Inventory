@@ -1,0 +1,31 @@
+<% include ../partials/head %>
+<% include ../partials/header %>
+    <main>
+      <div class="new-home">
+        <h1>New Home</h1>
+        <form method="post" action="/users/<%= currentUser._id %>/home">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input placeholder="Ex. 'Family Home'" type="text" name="name" id="name">
+          </div>
+
+          <div class="form-group">
+            <label for="address">Address:</label>
+            <input placeholder="address" type="text" name="address" id="address">
+          </div>
+
+          <div class="form-group">
+            <label for="residents">Residents:</label>
+            <input placeholder="residents" type="text" name="residents" id="residents">
+          </div>
+
+          <div class="form-group">
+            <label for="description">Description:</label>
+            <input placeholder="description" type="text" name="description" id="description">
+          </div>
+
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </main>
+<% include ../partials/footer %>
