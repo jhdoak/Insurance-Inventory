@@ -15,16 +15,28 @@
             <button type="submit">Sign Up</button>
           </form>
         </div>
+      <% } else if (currentUser && currentUser.homes.length < 1) { %>
+        <div class='main-landing'>
+        <h1>Create a home.</h1>
+
+        <form action="/users/<%= currentUser._id %>/home/new" method="GET">
+            <button type="submit">Create New Home</button>
+        </form>
+        </div>
       <% } else if (currentUser) { %>
         <div class='main-landing'>
           <div class='homes-list'>
 
             <% currentUser.homes.forEach(function(home) { %>
               <div class='home'>
-                <h2><%= home.name %></h2>
+                <a href="/inventory/<%= home.id %>"><h2><%= home.name %></h2></a>
                 <h3><span>Address:</span> <%= home.address %></h3>
                 <h3><span>Residents:</span> <%= home.residents %></h3>
                 <h3><span>Description:</span> <%= home.description %></h3>
+                <form action="/users/<%= currentUser._id %>/home/<%= home._id %>/edit" method="GET">
+                <button type="submit">Edit</button></form>
+                <form action="/users/<%= currentUser._id %>/home/<%= home._id %>/delete" method="get">
+                <button type="submit">Delete</button></form>
               </div>
             <% }); %>
 

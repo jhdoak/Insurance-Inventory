@@ -91,10 +91,6 @@ a:hover {
   font-weight: 400;
 }
 
-.main-landing form {
-  display: inline;
-}
-
 .main-landing button {
   margin: 0 0 5px 5px;
   font-size: .8em;
@@ -104,25 +100,25 @@ a:hover {
 
 /* SIGNUP/LOGIN DIV STYLING */
 
-.signup-landing, .login-landing, .new-home {
+.landing {
   width: 50%;
   margin: 55px auto 0;
   background: rgba(0, 0, 0, .7);
   border-radius: 5px;
 }
 
-.signup-landing h1, .login-landing h1, .new-home h1 {
+.landing h1 {
   color: lightgray;
   font-weight: 400;
   margin: 5px;
 }
 
-.signup-landing form, .login-landing form, .new-home form {
+.landing form, signup-landing form, .edit-landing form {
   display: flex;
   flex-wrap: wrap;
 }
 
-.signup-landing .form-group, .login-landing .form-group, .new-home .form-group {
+.landing .form-group {
   width: 50%;      /* Change width to 33% if implementing */
   height: 60px;    /* password verification on signup page */
   padding: 0 5px;
@@ -131,16 +127,16 @@ a:hover {
   justify-content: flex-end;
 }
 
-.signup-landing label, .login-landing label, .new-home label {
+.landing label {
   color: lightgray;
   font-weight: 400;
 }
 
-.signup-landing input, .login-landing input, .new-home input {
+.landing input {
   height: 22px;
 }
 
-.signup-landing button, .login-landing button, .new-home button {
+.landing button {
   margin: 8px 5px;
   font-size: .8em;
 }
@@ -157,7 +153,7 @@ a:hover {
 
 /* HOMES LIST */
 
-.homes-list span {
+.home span {
   text-decoration: underline;
 }
 
@@ -165,6 +161,15 @@ a:hover {
   padding-bottom: 5px;
   color: white;
   font-size: 1.5em;
+  display: inline;
+}
+
+.home a {
+  text-decoration: none;
+}
+
+.home h2:hover {
+  font-weight: 400;
 }
 
 .main-landing h3 {
@@ -182,9 +187,50 @@ a:hover {
   margin: 5px 0 5px 5px;
 }
 
+.homes-list h2 {
+  text-transform: capitalize;
+}
 
 
-/* NEW HOME */
+
+/* EDIT HOME PAGE */
+
+.new-home h1  {
+  text-transform: capitalize;
+}
+
+
+
+/* DELETE HOME PAGE */
+
+.delete-landing h1 {
+  text-transform: capitalize;
+}
+
+.warning {
+  color: orange;
+  margin: 5px 10px 0 5px;
+  font-size: .8em;
+  border-top: orange 1px solid;
+  border-bottom: orange 1px solid;
+}
+
+.warning h4 {
+  margin: 0;
+}
+
+#delete-form {
+  display: block;
+}
+
+#delete-form div {
+  height: auto;
+}
+
+.delete-button {
+  color: red;
+  font-weight:400;
+}
 
 
 

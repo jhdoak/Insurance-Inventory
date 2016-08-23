@@ -1,5 +1,6 @@
 var LocalStrategy   = require('passport-local').Strategy;
 var User            = require('../../models/user');
+var isValidPassword = require('./password');
 
 var strategy = new LocalStrategy({
     usernameField : 'email',
@@ -14,15 +15,18 @@ var strategy = new LocalStrategy({
         // A user with this email already exists
         return callback(null, false, req.flash('error', 'This email is already taken.'));
       }
-      else {
+      else if (isValidPassword(password)) {
         // Create a new user
-        var newUser = new User();
+        var newUser            = new User();
         newUser.local.email    = email;
         newUser.local.password = newUser.encrypt(password);
 
         newUser.save(function(err) {
           return callback(err, newUser);
         });
+      }
+      else {
+        return callback(null, false, req.flash('error', 'Your password is lame!'));
       }
     });
   });

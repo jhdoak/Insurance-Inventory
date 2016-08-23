@@ -1,27 +1,27 @@
 <% include ../partials/head %>
 <% include ../partials/header %>
     <main>
-      <div class="landing">
-        <h1>New Home</h1>
-        <form method="post" action="/users/<%= currentUser._id %>/home">
+      <div class="landing edit-landing">
+        <h1>Edit <%= home.name %></h1>
+        <form method="post" action="/users/<%= currentUser._id %>/home/<%= home._id %>/?_method=PUT">
           <div class="form-group">
             <label for="name">Name:</label>
-            <input placeholder="Ex. 'Family Home'" type="text" name="name" id="name">
+            <input value="<%= home.name %>" type="text" name="name" id="name">
           </div>
 
           <div class="form-group">
             <label for="address">Address:</label>
-            <input placeholder="address" type="text" name="address" id="address">
+            <input value="<%= home.address %>" type="text" name="address" id="address">
           </div>
 
           <div class="form-group">
             <label for="residents">Residents:</label>
-            <input placeholder="residents" type="text" name="residents" id="residents">
+            <input value="<%= home.residents %>" type="text" name="residents" id="residents">
           </div>
 
           <div class="form-group">
             <label for="description">Description:</label>
-            <input placeholder="description" type="text" name="description" id="description">
+            <input value="<%= home.description %>" type="text" name="description" id="description">
           </div>
 
           <button type="submit">Submit</button>

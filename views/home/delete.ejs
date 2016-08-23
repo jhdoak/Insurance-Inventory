@@ -1,0 +1,29 @@
+<% include ../partials/head %>
+<% include ../partials/header %>
+    <main>
+      <div class="landing main-landing delete-landing">
+        <h1>Delete <%= home.name %></h1>
+
+        <div class='home'>
+          <h3><span>Name:</span> <%= home.name %></h3>
+          <h3><span>Address:</span> <%= home.address %></h3>
+          <h3><span>Residents:</span> <%= home.residents %></h3>
+          <h3><span>Description:</span> <%= home.description %></h3>
+        </div>
+
+        <div class='warning'>
+          <h4>Deleting a home will delete all of its items. This is <span class='emphasis'>irreversable</span>.</h4>
+          <!-- <h4>If you still want to delete this home, enter your password and press "delete".</h4> -->
+        </div>
+
+        <form id='delete-form' method="POST" action="/users/<%= currentUser._id %>/home/<%= home._id %>?_method=DELETE">
+          <!-- <div class="form-group">
+            <label for="password">Password:</label>
+            <input placeholder="password" type="password" name="password" id="password">
+          </div> -->
+          <button class='delete-button' type="submit">Delete</button>
+        </form>
+
+      </div>
+    </main>
+<% include ../partials/footer %>
