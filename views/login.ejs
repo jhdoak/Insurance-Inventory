@@ -15,6 +15,21 @@
           </div>
 
           <button type="submit">Submit</button>
+
+          <div class='flash'>
+            <% if (typeof message !== 'undefined') { %>
+              <% if (typeof message.error !== 'undefined' && message.error.length > 0) { %>
+                <div style='color: orange; font-size: 1em; width: 100%; font-weight: 400; margin: 9px 0'><%= message.error %></div>
+              <% } %>
+              <% if (typeof message.info !== 'undefined' && message.info.length > 0) { %>
+                <div class="bg-info"><%= message.info %></div>
+              <% } %>
+              <% if (typeof message.success !== 'undefined' && message.success.length > 0) { %>
+                <div class="bg-success"><%= message.success %></div>
+              <% } %>
+            <% } %>
+          </div>
+
         </form>
       </div>
     </main>
