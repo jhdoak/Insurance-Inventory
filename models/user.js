@@ -1,7 +1,6 @@
 var mongoose = require('mongoose');
 var bcrypt   = require('bcrypt-nodejs');
 var Home     = require('./home');
-var deepPopulate = require('mongoose-deep-populate')(mongoose);
 
 var UserSchema = new mongoose.Schema({
   local: {
@@ -12,8 +11,6 @@ var UserSchema = new mongoose.Schema({
   },
   { timestamps: true }
 );
-
-UserSchema.plugin(deepPopulate);
 
 UserSchema.methods.encrypt = function(password) {
  return bcrypt.hashSync(password, bcrypt.genSaltSync(8));

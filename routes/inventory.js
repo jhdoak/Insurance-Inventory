@@ -22,8 +22,9 @@ function authenticate(req, res, next) {
 
 /* GET inventory home page. */
 router.get('/:homeid', authenticate, function(req, res, next) {
-  var home = currentUser.homes.id(req.params.homeid);
-  res.render('inventory/index', { home: home, message: req.flash() });
+  var home  = currentUser.homes.id(req.params.homeid);
+  var items = home.inventory.populate('Item');
+  res.render('inventory/index', { home: home, items: items, message: req.flash() });
 });
 
 
