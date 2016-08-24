@@ -1,6 +1,9 @@
 {
   "name": "insurance-inventory",
   "version": "0.0.0",
+  "engines": {
+    "node": "6.3.1"
+  }
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www"
@@ -16,6 +19,7 @@
     "express-session": "^1.14.0",
     "method-override": "^2.3.6",
     "mongoose": "^4.5.9",
+    "mongoose-deep-populate": "^3.0.0",
     "morgan": "~1.7.0",
     "nodemon": "^1.10.0",
     "passport": "^0.3.2",

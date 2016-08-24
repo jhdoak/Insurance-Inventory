@@ -1,0 +1,59 @@
+<% include ../partials/head %>
+<% include ../partials/header %>
+    <main>
+      <div class="landing">
+        <h1>New Item</h1>
+        <form method="post" action="/inventory/<%= home.id %>">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input placeholder="Ex. 'Living Room TV'" type="text" name="name" id="name">
+          </div>
+
+          <div class="form-group">
+            <label for="brand">Brand:</label>
+            <input placeholder="brand" type="text" name="brand" id="brand">
+          </div>
+
+          <div class="form-group">
+            <label for="itemModel">Model:</label>
+            <input placeholder="model" type="text" name="itemModel" id="itemModel">
+          </div>
+
+          <div class="form-group">
+            <label for="serial">Serial #:</label>
+            <input placeholder="serial" type="text" name="serial" id="serial">
+          </div>
+
+          <div class="form-group">
+            <label for="category">Category:</label>
+            <input placeholder="category" type="text" name="category" id="category">
+          </div>
+
+          <div class="form-group">
+            <label for="purchaseDate">Purchase Date:</label>
+            <input placeholder="purchase date" type="text" name="purchaseDate" id="purchaseDate">
+          </div>
+
+          <div class="form-group">
+            <label for="pricePaid">Price Paid:</label>
+            <input placeholder="price paid" type="text" name="pricePaid" id="pricePaid">
+          </div>
+
+          <div class="form-group">
+            <label for="estimatedValue">Estimated Value:</label>
+            <input placeholder="estimated value" type="text" name="estimatedValue" id="estimatedValue">
+          </div>
+
+          <div class="form-group">
+            <label for="otherNotes">Other Notes:</label>
+            <input placeholder="notes" type="text" name="otherNotes" id="otherNotes">
+          </div>
+
+          <div class="form-group">
+          </div>
+
+          <button id='new-item-submit' type="submit">Submit</button>
+        </form>
+      </div>
+    </main>
+<% include ../partials/footer %>

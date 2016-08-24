@@ -82,7 +82,7 @@ a:hover {
   font-size: 1.25em;
 }
 
-.main-landing h2 {
+.main-landing h2, .item h2 {
   margin: 0 5px;
 }
 
@@ -105,6 +105,8 @@ a:hover {
   margin: 55px auto 0;
   background: rgba(0, 0, 0, .7);
   border-radius: 5px;
+  overflow-y: auto;
+  height: 75%;
 }
 
 .landing h1 {
@@ -153,41 +155,41 @@ a:hover {
 
 /* HOMES LIST */
 
-.home span {
+.home span, .item span {
   text-decoration: underline;
 }
 
-.home h2 {
+.home h2, .item h2 {
   padding-bottom: 5px;
   color: white;
   font-size: 1.5em;
   display: inline;
 }
 
-.home a {
+.home a, .item a {
   text-decoration: none;
 }
 
-.home h2:hover {
+.home h2:hover, .item h2:hover {
   font-weight: 400;
 }
 
-.main-landing h3 {
+.main-landing h3, .item h3 {
   color: white;
   margin: 0 10px 0 5px;
   font-size: 1.17em;
 }
 
-.home {
+.home, .item {
   padding: 5px 0;
   border-bottom: 1px solid white;
 }
 
-.homes-list button {
+.homes-list button, .item button {
   margin: 5px 0 5px 5px;
 }
 
-.homes-list h2 {
+.homes-list h2, .item h2 {
   text-transform: capitalize;
 }
 
@@ -231,6 +233,23 @@ a:hover {
   color: red;
   font-weight:400;
 }
+
+
+
+/* ITEM LIST STYLING */
+
+.item .emphasis {
+  font-weight: 400;
+}
+
+.new-item-button {
+  border-bottom: 1px solid white;
+}
+
+
+
+/* NEW ITEM STYLING */
+
 
 
 
