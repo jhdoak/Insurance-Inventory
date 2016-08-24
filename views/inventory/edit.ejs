@@ -4,7 +4,7 @@
       <div class="landing item-edit-landing">
         <h1>Edit <%= item.name %></h1>
         <h4>Home: <a href="/inventory/<%= home.id %>"><%= home.name %></a></h4>
-        <form method="post" action="/inventory/<%= home.id %>">
+        <form method="post" action="/inventory/<%= home.id %>/item/<%= item.id %>?_method=PUT">
           <div class="form-group">
             <label for="name">Name:</label>
             <input value="<%= item.name %>" type="text" name="name" id="name">
@@ -53,7 +53,7 @@
           <div class="form-group">
           </div>
 
-          <button id='new-item-submit' type="submit">Submit</button>
+          <button id='edit-item-submit' type="submit">Submit</button>
 
           <div class='timestamps'>
             <h5 class='item-show-attribute'><span>Item Added:</span> <%= item.getCreatedAt() %></h3>

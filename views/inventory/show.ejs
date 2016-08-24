@@ -43,7 +43,7 @@
           <form action="/inventory/<%= home.id %>/item/<%= item.id %>/edit" method="GET">
           <button type="submit">Edit</button></form>
 
-          <form action="/inventory/<%= home.id %>/item/<%= item.id %>/delete" method="GET">
+          <form action="/inventory/<%= home.id %>/item/<%= item.id %>/?_method=DELETE" method="POST">
           <button type="submit">Delete</button></form>
 
           <form action="/inventory/<%= home.id %>" method="GET">
