@@ -1,24 +1,57 @@
-<% include partials/head %>
-<% include partials/header %>
-<body class="container-fluid">
-  <header>
-    <% include ../partials/header %>
-  </header>
+<% include ../partials/head %>
+<% include ../partials/header %>
 
   <main>
-    <div>
-      <h3><%= item.brand + ' ' + item.model%></h3>
-      <p><b>Brand: </b><%= item.brand %></p>
-      <p><b>Model: </b><%= todo.model %></p>
-      <p><b>Model: </b><%= todo.model %></p>
-      <p><b>Model: </b><%= todo.model %></p>
-      <p><b>Model: </b><%= todo.model %></p>
+    <div class='main-landing'>
+      <div class='show-item'>
+        <div class='item' id='show-item'>
+          <h2><%= item.name %></h2>
 
-      <p><b>Item added: </b><%= todo.getCreatedAt() %></p>
-      <p><b>Last Updated: </b><%= todo.getUpdatedAt() %></p>
+          <% if (item.brand) { %>
+            <h3 class='item-show-attribute'><span class='emphasis'>Brand:</span> <%= item.brand %></h3>
+          <% } %>
+          <% if (item.itemModel) { %>
+            <h3 class='item-show-attribute'><span class='emphasis'>Model #:</span> <%= item.itemModel %></h3>
+          <% } %>
+          <% if (item.serial) { %>
+            <h3 class='item-show-attribute'><span class='emphasis'>Serial #:</span> <%= item.serial %></h3>
+          <% } %>
+
+          <% if (item.category) { %>
+            <h3 class='item-show-attribute'><span class='emphasis'>Category:</span> <%= item.category %></h3>
+          <% } %>
+
+          <% if (item.purchaseDate) { %>
+            <h3 class='item-show-attribute'><span class='emphasis'>Purchase Date:</span> <%= item.purchaseDate %></h3>
+          <% } %>
+
+          <% if (item.pricePaid) { %>
+            <h3 class='item-show-attribute'><span class='emphasis'>Price Paid:</span> <%= item.pricePaid %></h3>
+          <% } %>
+
+          <% if (item.estimatedValue) { %>
+            <h3 class='item-show-attribute'><span class='emphasis'>Estimated Value:</span> <%= item.estimatedValue %></h3>
+          <% } %>
+
+          <% if (item.otherNotes) { %>
+            <h3 class='item-show-attribute'><span class='emphasis'>Notes:</span> <%= item.otherNotes %></h3>
+          <% } %>
+
+          <h3 class='item-show-attribute'><span class='emphasis'>Item added:</span> <%= item.getCreatedAt() %></h3>
+          <h3 class='item-show-attribute'><span class='emphasis'>Last Updated:</span> <%= item.getUpdatedAt() %></h3>
+
+          <form action="/inventory/<%= home.id %>/item/<%= item.id %>/edit" method="GET">
+          <button type="submit">Edit</button></form>
+
+          <form action="/inventory/<%= home.id %>/item/<%= item.id %>/delete" method="GET">
+          <button type="submit">Delete</button></form>
+
+          <form action="/inventory/<%= home.id %>" method="GET">
+          <button type="submit">Back to <%= home.name %></button></form>
+        </div>
+      </div>
     </div>
 
-    <a href="/todos" class="btn btn-primary">Back</a>
-    <a href="/todos/<%= todo._id %>/edit" class="btn btn-danger">Edit</a>
+
   </main>
-<% include partials/footer %>
+<% include ../partials/footer %>

@@ -1,0 +1,65 @@
+<% include ../partials/head %>
+<% include ../partials/header %>
+    <main>
+      <div class="landing item-edit-landing">
+        <h1>Edit <%= item.name %></h1>
+        <h4>Home: <a href="/inventory/<%= home.id %>"><%= home.name %></a></h4>
+        <form method="post" action="/inventory/<%= home.id %>">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input value="<%= item.name %>" type="text" name="name" id="name">
+          </div>
+
+          <div class="form-group">
+            <label for="brand">Brand:</label>
+            <input value="<%= item.brand %>" type="text" name="brand" id="brand">
+          </div>
+
+          <div class="form-group">
+            <label for="itemModel">Model:</label>
+            <input value="<%= item.itemModel %>" type="text" name="itemModel" id="itemModel">
+          </div>
+
+          <div class="form-group">
+            <label for="serial">Serial #:</label>
+            <input value="<%= item.serial %>" type="text" name="serial" id="serial">
+          </div>
+
+          <div class="form-group">
+            <label for="category">Category:</label>
+            <input value="<%= item.category %>" type="text" name="category" id="category">
+          </div>
+
+          <div class="form-group">
+            <label for="purchaseDate">Purchase Date:</label>
+            <input value="<%= item.purchaseDate %>" type="text" name="purchaseDate" id="purchaseDate">
+          </div>
+
+          <div class="form-group">
+            <label for="pricePaid">Price Paid:</label>
+            <input value="<%= item.pricePaid %>" type="text" name="pricePaid" id="pricePaid">
+          </div>
+
+          <div class="form-group">
+            <label for="estimatedValue">Estimated Value:</label>
+            <input value="<%= item.estimatedValue %>" type="text" name="estimatedValue" id="estimatedValue">
+          </div>
+
+          <div class="form-group">
+            <label for="otherNotes">Other Notes:</label>
+            <input value="<%= item.otherNotes %>" type="text" name="otherNotes" id="otherNotes">
+          </div>
+
+          <div class="form-group">
+          </div>
+
+          <button id='new-item-submit' type="submit">Submit</button>
+
+          <div class='timestamps'>
+            <h5 class='item-show-attribute'><span>Item Added:</span> <%= item.getCreatedAt() %></h3>
+            <h5 class='item-show-attribute'><span>Last Updated:</span> <%= item.getUpdatedAt() %></h3>
+          </div>
+        </form>
+      </div>
+    </main>
+<% include ../partials/footer %>

@@ -12,6 +12,22 @@ var UserSchema = new mongoose.Schema({
   { timestamps: true }
 );
 
+function date2String(date) {
+  var options = {
+    weekday: 'long', year: 'numeric', month: 'short',
+    day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit'
+  };
+  return date.toLocaleDateString('en-US', options);
+}
+
+UserSchema.methods.getCreatedAt = function() {
+  return date2String(this.createdAt);
+};
+
+UserSchema.methods.getUpdatedAt = function() {
+  return date2String(this.updatedAt);
+};
+
 UserSchema.methods.encrypt = function(password) {
  return bcrypt.hashSync(password, bcrypt.genSaltSync(8));
 };

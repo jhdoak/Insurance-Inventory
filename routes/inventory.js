@@ -23,20 +23,9 @@ function authenticate(req, res, next) {
 /* GET inventory home page. */
 router.get('/:homeid', authenticate, function(req, res, next) {
   var home  = currentUser.homes.id(req.params.homeid);
-  var items = home.inventory.populate('Item');
+  var items = home.inventory;
   res.render('inventory/index', { home: home, items: items, message: req.flash() });
 });
-
-
-//  User.homes.findOne({ _id: req.params.homeid })
-//  .populate('inventory')
-//  .exec(function (err, home) {
-//    if (err) return handleError(err);
-//    console.log('populatedhome:', home);
-//    res.render('inventory/index', { home: home, message: req.flash() });
-//  });
-//});
-
 
 // Get new item page
 router.get('/:homeid/new', authenticate, function(req, res, next) {
@@ -56,21 +45,30 @@ router.post('/:homeid', authenticate, function(req, res, next) {
     pricePaid      : req.body.pricePaid,
     estimatedValue : req.body.estimatedValue,
     otherNotes     : req.body.otherNotes,
-    home           : req.params.homeid
   });
-  Item.create(item)
-  .then(function(createdItem) {
-    currentUser.homes.id(req.params.homeid).inventory.push(createdItem._id);
-    return currentUser.save();
-  })
+  currentUser.homes.id(req.params.homeid).inventory.push(item);
+  currentUser.save()
   .then(function() {
     var home = currentUser.homes.id(req.params.homeid);
-    res.render('inventory/index', { home: home, message: req.flash() });
+    res.redirect('inventory/:homeid', { home: home, items: home.inventory, message: req.flash() });
   }, function(err) {
     return next(err);
   });
 });
 
+// Get view item page
+router.get('/:homeid/item/:itemid', authenticate, function(req, res, next) {
+  var home = currentUser.homes.id(req.params.homeid);
+  var item = home.inventory.id(req.params.itemid);
+  res.render('inventory/show', { home: home, item: item, message: req.flash() });
+})
+
+// Get item edit page
+router.get('/:homeid/item/:itemid/edit',  authenticate, function(req, res, next) {
+  var home = currentUser.homes.id(req.params.homeid);
+  var item = home.inventory.id(req.params.itemid);
+  res.render('inventory/edit', { home: home, item: item, message: req.flash() });
+})
 
 
 module.exports = router;

@@ -238,7 +238,13 @@ a:hover {
 
 /* ITEM LIST STYLING */
 
-.item .emphasis {
+#inventory-head {
+  text-transform: capitalize;
+  color: white;
+  margin: 5px 5px 0;
+}
+
+.item .emphasis, .home .emphasis {
   font-weight: 400;
 }
 
@@ -246,10 +252,69 @@ a:hover {
   border-bottom: 1px solid white;
 }
 
+.item a h2{
+  font-weight: 300;
+}
+
+.item a h2:hover {
+  font-weight: 400;
+}
 
 
-/* NEW ITEM STYLING */
 
+/* SHOW ITEM STYLING */
+
+#show-item {
+  border-bottom: initial;
+}
+
+#show-item h2:hover {
+  font-weight: 300;
+}
+
+#show-item .item-show-attribute {
+  margin: 3px 10px 3px 5px;
+}
+
+
+
+/* EDIT ITEM STYLING */
+
+.item-edit-landing h1 {
+  margin-bottom: 0;
+  text-transform: capitalize;
+}
+
+.item-edit-landing h3 {
+  width: 100%;
+  color: white;
+}
+
+.item-edit-landing h4, .item-edit-landing h5 {
+  color: white;
+  margin: 0 10px 0 5px;
+}
+
+.item-edit-landing a {
+  text-decoration: none;
+  color: lightgray;
+}
+
+.item-edit-landing a:hover {
+  color: white;
+}
+
+.item-edit-landing form {
+  display: flex;
+  flex-wrap: wrap;
+  border-top: 1px solid white;
+  margin-top: 2px;
+}
+
+.timestamps {
+  padding-bottom: 5px;
+  width: 100%;
+}
 
 
 

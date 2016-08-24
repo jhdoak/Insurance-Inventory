@@ -1,47 +1,57 @@
 <% include ../partials/head %>
 <% include ../partials/header %>
     <div class='landing'>
+      <h1 id='inventory-head'><%= home.name %> Inventory</h1>
       <form class='new-item-button' action="/inventory/<%= home.id %>/new" method="GET">
         <button type="submit">Create New Item</button>
       </form>
 
         <% items.forEach(function(item) { %>
-          <div class='item'>
-            <h2><%= item.name %></h2>
+          <% if (items.indexOf(item) >= items.length - 1 ) { %>
+            <div class='item' style='border-bottom: initial;'>
+          <% } else { %>
+            <div class='item'>
+          <% } %>
+              <a href="/inventory/<%= home.id %>/item/<%= item.id %>"><h2><%= item.name %></h2></a>
 
-            <% if (item) { %>
-              <h3><span class='emphasis'>Item:</span> <%= item %></h3>
-            <% } %>
+              <!-- /* <% if (item) { %>
+                <h3><span class='emphasis'>Item:</span> <%= item %></h3>
+              <% } %>
 
-            <% if (item._id) { %>
-              <h3><span class='emphasis'>Id:</span> <%= item._id %></h3>
-            <% } %>
+              <% if (item._id) { %>
+                <h3><span class='emphasis'>Id:</span> <%= item._id %></h3>
+              <% } %> */ -->
 
-            <% if (item.brand) { %>
-              <h3><span class='emphasis'>Brand:</span> <%= item.brand %></h3>
-            <% } %>
-            <% if (item.itemModel) { %>
-              <h3><span class='emphasis'>Model #:</span> <%= item.itemModel %></h3>
-            <% } %>
-            <% if (item.serial) { %>
-              <h3><span class='emphasis'>Serial #:</span> <%= item.serial %></h3>
-            <% } %>
-            <% if (item.purchaseDate) { %>
-              <h3><span class='emphasis'>Purchase Date:</span> <%= item.purchaseDate %></h3>
-            <% } %>
+              <% if (item.brand) { %>
+                <h3><span class='emphasis'>Brand:</span> <%= item.brand %></h3>
+              <% } %>
+              <% if (item.itemModel) { %>
+                <h3><span class='emphasis'>Model #:</span> <%= item.itemModel %></h3>
+              <% } %>
+              <% if (item.serial) { %>
+                <h3><span class='emphasis'>Serial #:</span> <%= item.serial %></h3>
+              <% } %>
 
-            <% if (item.pricePaid) { %>
-              <h3><span class='emphasis'>Price Paid:</span> <%= item.pricePaid %></h3>
-            <% } %>
+              <% if (item.category) { %>
+                <h3><span class='emphasis'>Category:</span> <%= item.category %></h3>
+              <% } %>
 
-            <% if (item.estimatedValue) { %>
-              <h3><span class='emphasis'>Estimated Value:</span> <%= item.estimatedValue %></h3>
-            <% } %>
+              <% if (item.purchaseDate) { %>
+                <h3><span class='emphasis'>Purchase Date:</span> <%= item.purchaseDate %></h3>
+              <% } %>
 
-            <% if (item.otherNotes) { %>
-              <h3><span class='emphasis'>Notes:</span> <%= item.otherNotes %></h3>
-            <% } %>
-          </div>
+              <% if (item.pricePaid) { %>
+                <h3><span class='emphasis'>Price Paid:</span> <%= item.pricePaid %></h3>
+              <% } %>
+
+              <% if (item.estimatedValue) { %>
+                <h3><span class='emphasis'>Estimated Value:</span> <%= item.estimatedValue %></h3>
+              <% } %>
+
+              <% if (item.otherNotes) { %>
+                <h3><span class='emphasis'>Notes:</span> <%= item.otherNotes %></h3>
+              <% } %>
+            </div>
         <% }); %>
 
     </div>
