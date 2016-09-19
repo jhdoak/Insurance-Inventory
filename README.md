@@ -1,6 +1,6 @@
 # WDI Project 2 - Insurance Inventory
 
-Project Link: [Insurance Inventory](https://fierce-fjord-81867.herokuapp.com/)
+Project Link: [Insurance Inventory](https://insurance-inventory.herokuapp.com/)
 
 Trello Board: [Trello Board](https://trello.com/b/pWai6NAK/wdi-project-2)
 
