@@ -9,6 +9,7 @@ var methodOverride = require('method-override');
 var passport       = require('passport');
 var session        = require('express-session');
 var flash          = require('connect-flash');
+var AWS            = require('aws-sdk');
 
 mongoose.Promise = require('bluebird');
 
