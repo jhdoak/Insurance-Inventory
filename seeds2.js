@@ -29,7 +29,7 @@ Item.remove({})
 .then(function() {
   console.log('all users and homes removed');
   console.log('creating new users...');
-  var justin  = new User({ name: 'Justin',  email: 'doak@doak.com',    password: 'abc123' });
+  var justin  = new User({ name: 'Justin',  'local.email': 'doak@doak.com',    'local.password': 'abc123' });
   return User.create(justin);
 })
 .then(function(savedUser) {

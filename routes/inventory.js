@@ -39,6 +39,7 @@ router.post('/:homeid', authenticate, function(req, res, next) {
     name           : req.body.name,
     brand          : req.body.brand,
     itemModel      : req.body.itemModel,
+    picture        : req.body.picture,
     serial         : req.body.serial,
     category       : req.body.category,
     purchaseDate   : req.body.purchaseDate,
@@ -78,6 +79,7 @@ router.put('/:homeid/item/:itemid', authenticate, function(req, res, next) {
     item.name           = req.body.name;
     item.brand          = req.body.brand;
     item.itemModel      = req.body.itemModel;
+    item.picture        = req.body.picture;
     item.serial         = req.body.serial;
     item.category       = req.body.category;
     item.purchaseDate   = req.body.purchaseDate;

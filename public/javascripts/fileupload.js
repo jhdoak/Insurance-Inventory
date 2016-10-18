@@ -7,6 +7,7 @@
     if(file == null){
       return alert('No file selected.');
     }
+    console.log("FILE:", file);
     getSignedRequest(file);
   };
 })();

@@ -1,6 +1,8 @@
-var express = require('express');
-var router = express.Router();
+var express  = require('express');
+var router   = express.Router();
 var passport = require('passport');
+var aws      = require('aws-sdk');
+const S3_BUCKET = process.env.S3_BUCKET;
 
 // GET home page
 router.get('/', function(req, res, next) {
@@ -42,6 +44,40 @@ router.post('/login', function(req, res, next) {
 router.get('/logout', function(req, res, next) {
   req.logout();
   res.redirect('/');
+});
+
+
+// Create a signed URL to make a
+// PUT request to S3
+router.get('/sign-s3', (req, res) => {
+  console.log("/SIGN-S3!!")
+  const s3 = new aws.S3();
+  console.log("still going!");
+  const fileName = req.query['file-name'];
+  console.log("fileName:", fileName);
+  const fileType = req.query['file-type'];
+  console.log("fileType:", fileType);
+  const s3Params = {
+    Bucket: S3_BUCKET,
+    Key: fileName,
+    Expires: 60,
+    ContentType: fileType,
+    ACL: 'public-read'
+  };
+  console.log("s3Params:", s3Params);
+
+  s3.getSignedUrl('putObject', s3Params, (err, data) => {
+    if(err){
+      console.log(err);
+      return res.end();
+    }
+    const returnData = {
+      signedRequest: data,
+      url: `https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`
+    };
+    res.write(JSON.stringify(returnData));
+    res.end();
+  });
 });
 
 module.exports = router;
