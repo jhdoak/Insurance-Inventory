@@ -13,15 +13,6 @@
             <div class='item'>
           <% } %>
               <a href="/inventory/<%= home.id %>/item/<%= item.id %>"><h2><%= item.name %></h2></a>
-
-              <!-- /* <% if (item) { %>
-                <h3><span class='emphasis'>Item:</span> <%= item %></h3>
-              <% } %>
-
-              <% if (item._id) { %>
-                <h3><span class='emphasis'>Id:</span> <%= item._id %></h3>
-              <% } %> */ -->
-
               <% if (item.brand) { %>
                 <h3><span class='emphasis'>Brand:</span> <%= item.brand %></h3>
               <% } %>
