@@ -51,11 +51,13 @@
             <% currentUser.homes.forEach(function(home) { %>
               <div class='home'>
                 <a href="/inventory/<%= home.id %>"><h2><%= home.name %></h2></a>
+                <form action="/inventory/<%= home.id %>" method="GET">
+                <button type="submit">View Inventory</button></form>
                 <h3><span>Address:</span> <%= home.address %></h3>
                 <h3><span>Residents:</span> <%= home.residents %></h3>
                 <h3><span>Description:</span> <%= home.description %></h3>
                 <form action="/users/<%= currentUser._id %>/home/<%= home._id %>/edit" method="GET">
-                <button type="submit">Edit</button></form>
+                <button type="submit" style="float:left">Edit</button></form>
                 <form action="/users/<%= currentUser._id %>/home/<%= home._id %>/delete" method="get">
                 <button type="submit">Delete</button></form>
               </div>

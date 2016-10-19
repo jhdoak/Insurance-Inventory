@@ -14,7 +14,7 @@
           <% } %>
               <a href="/inventory/<%= home.id %>/item/<%= item.id %>"><h2><%= item.name %></h2></a>
               <form action="/inventory/<%= home.id %>/item/<%= item.id %>" method="GET">
-                <button type="submit">View Details</button>
+                <button type="submit">View Item Details</button>
               </form>
               <% if (item.brand) { %>
                 <h3><span class='emphasis'>Brand:</span> <%= item.brand %></h3>
