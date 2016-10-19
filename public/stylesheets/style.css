@@ -129,9 +129,29 @@ a:hover {
   justify-content: flex-end;
 }
 
+.landing .image-upload {
+  height: initial;
+  margin-top: 20px;
+}
+
+.landing .image-upload #file-input {
+  margin-top: 1px;
+}
+
+.landing .image-upload #preview {
+  max-height: 150px;
+  max-width: 100%;
+}
+
 .landing label {
   color: lightgray;
   font-weight: 400;
+}
+
+.form-group #status {
+  color: lightgray;
+  font-weight: 400;
+  margin: 0;
 }
 
 .landing input {

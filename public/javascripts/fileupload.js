@@ -7,7 +7,6 @@
     if(file == null){
       return alert('No file selected.');
     }
-    console.log("FILE:", file);
     getSignedRequest(file);
   };
 })();
@@ -39,7 +38,14 @@ function uploadFile(file, signedRequest, url){
   xhr.onreadystatechange = () => {
     if(xhr.readyState === 4){
       if(xhr.status === 200){
-        document.getElementById('preview').src = url;
+        if (document.getElementById('preview')) {
+          document.getElementById('preview').src = url;
+        } else {
+          var imagePreview = document.createElement("img");
+          imagePreview.id = "preview";
+          imagePreview.src = url;
+          document.getElementById('image-upload').appendChild(imagePreview);
+        }
         document.getElementById('image-url').value = url;
       }
       else{
