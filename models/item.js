@@ -5,7 +5,7 @@ var ItemSchema = new mongoose.Schema({
   brand:          { type: String },
   itemModel:      { type: String },
   serial:         { type: String },
-  category:       { type: String, required: true },
+  category:       { type: String },
   purchaseDate:   { type: String },
   pricePaid:      { type: String },
   estimatedValue: { type: String },
