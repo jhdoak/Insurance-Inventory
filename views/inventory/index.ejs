@@ -1,5 +1,6 @@
 <% include ../partials/head %>
 <% include ../partials/header %>
+  <main>
     <div class='landing'>
       <h1 id='inventory-head'><%= home.name %> Inventory</h1>
       <form class='new-item-button' action="/inventory/<%= home.id %>/new" method="GET">
@@ -49,6 +50,7 @@
         <% }); %>
 
     </div>
+  </main>
 <% include ../partials/footer %>
 
 

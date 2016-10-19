@@ -7,61 +7,57 @@
         <form method="post" action="/inventory/<%= home.id %>/item/<%= item.id %>?_method=PUT">
           <div class="form-group">
             <label for="name">Name:</label>
-            <input value="<%= item.name %>" type="text" name="name" id="name">
+            <input placeholder="Ex. 'Living Room TV'" type="text" name="name" id="name" required>
           </div>
 
           <div class="form-group">
             <label for="brand">Brand:</label>
-            <input value="<%= item.brand %>" type="text" name="brand" id="brand">
+            <input placeholder="brand" type="text" name="brand" id="brand">
           </div>
 
           <div class="form-group">
             <label for="itemModel">Model:</label>
-            <input value="<%= item.itemModel %>" type="text" name="itemModel" id="itemModel">
-          </div>
-
-          <div class="form-group">
-            <label for="picture">Image:</label>
-            <input type="file" id="file-input">
-            <p id="status">Please select a file</p>
-            <img id="preview" src="/images/default.png">
-            <input type="hidden" id="image-url" name="picture" value="">
+            <input placeholder="model" type="text" name="itemModel" id="itemModel">
           </div>
 
           <div class="form-group">
             <label for="serial">Serial #:</label>
-            <input value="<%= item.serial %>" type="text" name="serial" id="serial">
+            <input placeholder="serial" type="text" name="serial" id="serial">
           </div>
 
           <div class="form-group">
             <label for="category">Category:</label>
-            <input value="<%= item.category %>" type="text" name="category" id="category">
+            <input placeholder="category" type="text" name="category" id="category" required>
           </div>
 
           <div class="form-group">
             <label for="purchaseDate">Purchase Date:</label>
-            <input value="<%= item.purchaseDate %>" type="text" name="purchaseDate" id="purchaseDate">
+            <input placeholder="purchase date" type="text" name="purchaseDate" id="purchaseDate">
           </div>
 
           <div class="form-group">
             <label for="pricePaid">Price Paid:</label>
-            <input value="<%= item.pricePaid %>" type="text" name="pricePaid" id="pricePaid">
+            <input placeholder="price paid" type="text" name="pricePaid" id="pricePaid">
           </div>
 
           <div class="form-group">
             <label for="estimatedValue">Estimated Value:</label>
-            <input value="<%= item.estimatedValue %>" type="text" name="estimatedValue" id="estimatedValue">
+            <input placeholder="estimated value" type="text" name="estimatedValue" id="estimatedValue">
           </div>
 
           <div class="form-group">
             <label for="otherNotes">Other Notes:</label>
-            <input value="<%= item.otherNotes %>" type="text" name="otherNotes" id="otherNotes">
+            <input placeholder="notes" type="text" name="otherNotes" id="otherNotes">
           </div>
 
-          <div class="form-group">
+          <div class="form-group image-upload" id="image-upload">
+            <label for="picture">Image:</label>
+            <input type="file" id="file-input">
+            <p id="status">Please select a file</p>
+            <input type="hidden" id="image-url" name="picture" value="">
           </div>
 
-          <button id='edit-item-submit' type="submit">Submit</button>
+          <button id='new-item-submit' type="submit">Submit</button>
 
           <div class='timestamps'>
             <h5 class='item-show-attribute'><span>Item Added:</span> <%= item.getCreatedAt() %></h3>
