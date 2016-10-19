@@ -44,7 +44,7 @@
           <h3 class='item-show-attribute'><span class='emphasis'>Last Updated:</span> <%= item.getUpdatedAt() %></h3>
 
           <form action="/inventory/<%= home.id %>/item/<%= item.id %>/edit" method="GET">
-          <button type="submit">Edit</button></form>
+          <button type="submit" style="float: left">Edit</button></form>
 
           <form action="/inventory/<%= home.id %>/item/<%= item.id %>/?_method=DELETE" method="POST">
           <button type="submit">Delete</button></form>

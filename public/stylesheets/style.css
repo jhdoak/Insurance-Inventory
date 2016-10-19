@@ -272,6 +272,13 @@ a:hover {
   font-weight: 300;
 }
 
+#show-item img {
+  max-width: 150px;
+  max-height: 150px;
+  float: right;
+  padding-right: 5px;
+}
+
 #show-item .item-show-attribute {
   margin: 3px 10px 3px 5px;
 }
