@@ -106,7 +106,6 @@ a:hover {
   background: rgba(0, 0, 0, .7);
   border-radius: 5px;
   overflow-y: auto;
-  height: 75%;
 }
 
 .landing h1 {
