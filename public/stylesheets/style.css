@@ -106,7 +106,7 @@ a:hover {
   background: rgba(0, 0, 0, .7);
   border-radius: 5px;
   overflow-y: auto;
-  max-height: 75%;
+  max-height: 100%;
 }
 
 .landing h1 {
@@ -140,7 +140,8 @@ a:hover {
 
 .landing .image-upload #preview {
   max-height: 150px;
-  max-width: 100%;
+/*  max-width: 80%;*/
+  margin: 5px auto 0;
 }
 
 .landing label {
