@@ -50,13 +50,9 @@ router.get('/logout', function(req, res, next) {
 // Create a signed URL to make a
 // PUT request to S3
 router.get('/sign-s3', (req, res) => {
-  console.log("/SIGN-S3!!")
   const s3 = new aws.S3();
-  console.log("still going!");
   const fileName = req.query['file-name'];
-  console.log("fileName:", fileName);
   const fileType = req.query['file-type'];
-  console.log("fileType:", fileType);
   const s3Params = {
     Bucket: S3_BUCKET,
     Key: fileName,
@@ -64,7 +60,6 @@ router.get('/sign-s3', (req, res) => {
     ContentType: fileType,
     ACL: 'public-read'
   };
-  console.log("s3Params:", s3Params);
 
   s3.getSignedUrl('putObject', s3Params, (err, data) => {
     if(err){

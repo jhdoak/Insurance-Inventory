@@ -19,10 +19,20 @@
     if(file == null){
       return alert('No file selected.');
     }
-    document.getElementById('submit-cover').style.display = "block"
-    document.getElementById('submit-cover').style.height = "100%"
-    document.getElementById('submit-cover').style.width = "100%"
-    getSignedRequest(file);
+
+    $("submit-cover").css({
+      'display' : 'block',
+      'width' : '100%',
+      'height' : '100%'
+    });
+
+    $.ajax({
+      type: 'POST',
+      data: newUser,
+      url: '/users/adduser',
+      dataType: 'JSON'
+    })
+
   };
 })();
 

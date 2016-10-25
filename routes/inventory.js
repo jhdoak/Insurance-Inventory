@@ -35,7 +35,10 @@ router.get('/:homeid/new', authenticate, function(req, res, next) {
 
 // Create new item
 router.post('/:homeid', authenticate, function(req, res, next) {
-  console.log("Req.body:", req.body);
+
+
+
+
   var item = ({
     name           : req.body.name,
     brand          : req.body.brand,
