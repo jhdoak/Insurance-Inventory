@@ -1,12 +1,27 @@
 // This listens for changes to the file input
 // and selects the file to be uploaded.
+// (() => {
+//   document.getElementById("file-input").onchange = () => {
+//     const files = document.getElementById('file-input').files;
+//     const file = files[0];
+//     if(file == null){
+//       return alert('No file selected.');
+//     }
+//     getSignedRequest(file);
+//   };
+// })();
+
+
 (() => {
-  document.getElementById("file-input").onchange = () => {
+  document.getElementById("item-submit").onclick = () => {
     const files = document.getElementById('file-input').files;
     const file = files[0];
     if(file == null){
       return alert('No file selected.');
     }
+    document.getElementById('submit-cover').style.display = "block"
+    document.getElementById('submit-cover').style.height = "100%"
+    document.getElementById('submit-cover').style.width = "100%"
     getSignedRequest(file);
   };
 })();

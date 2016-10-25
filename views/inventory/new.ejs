@@ -3,6 +3,7 @@
     <main>
       <div class="landing">
         <h1>New Item</h1>
+        <div id="submit-cover">PLEASE WAIT</div>
         <form method="post" action="/inventory/<%= home.id %>">
           <div class="form-group">
             <label for="name">Name:</label>
@@ -53,10 +54,11 @@
             <label for="picture">Image:</label>
             <input type="file" id="file-input">
             <p id="status">Please select a file</p>
-            <input type="hidden" id="image-url" name="picture" value="">
+            <img id='preview' style='width:100px;'>
+            <!-- <input type="hidden" id="image-url" name="picture" value=""> -->
           </div>
 
-          <button id='new-item-submit' type="submit">Submit</button>
+          <button id='item-submit' type="submit">Submit</button>
         </form>
       </div>
     </main>

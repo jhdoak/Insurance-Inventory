@@ -343,6 +343,14 @@ a:hover {
   width: 100%;
 }
 
+#submit-cover {
+  display:none;
+  position:absolute;
+  top:0; left:0;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, .5);
+}
+
 
 
 /* FOOTER STYLING */
